@@ -997,16 +997,28 @@ let users=[[{"id":1,"Name":"Bobbye Goodere","email":"bgoodere0@dmoz.org","gender
     {"id":997,"Name":"Sid Narramor","email":"snarramorro@histats.com","gender":"Polygender"},
     {"id":998,"Name":"Tucky Tirkin","email":"ttirkinrp@creativecommons.org","gender":"Male"},
     {"id":999,"Name":"Jo-ann Kopf","email":"jkopfrq@imageshack.us","gender":"Agender"}]]
-console.log(users);
-function getUser(){
+
+/* function getUser(){
     let rows="";
-    for (user of users){
+    for(user of users){
         rows+=`<tr>
            <td>user.id</td>
-           <td>user.name</td>
+           <td>user.Name</td>x
            <td>user.email</td>
-           <td>user.Gender</td>
+           <td>user.gender</td>
            </tr>`
     }
  document.getElementsByTagName('tbody').innerHTML=rows   
+} */
+ function getUser(){
+    let rows="";
+    for(user of users){
+            rows = rows + `<tr>
+                            <td>${user.id}</td>
+                            <td>${user.name}</td>
+                            <td>${user.email}</td>
+                            <td>${user.gender}</td>
+                            </tr>`
+    }
+    document.getElementById('table_Data').innerHTML=rows
 }
