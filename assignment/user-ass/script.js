@@ -1,4 +1,4 @@
-let users=[[{"id":1,"Name":"Bobbye Goodere","email":"bgoodere0@dmoz.org","gender":"Female"},
+let Users=[[{"id":1,"Name":"Bobbye Goodere","email":"bgoodere0@dmoz.org","gender":"Female"},
     {"id":2,"Name":"Brion Sherwood","email":"bsherwood1@shutterfly.com","gender":"Male"},
     {"id":3,"Name":"Etti Denne","email":"edenne2@chronoengine.com","gender":"Female"},
     {"id":4,"Name":"Courtenay Latchford","email":"clatchford3@sakura.ne.jp","gender":"Female"},
@@ -1010,15 +1010,29 @@ let users=[[{"id":1,"Name":"Bobbye Goodere","email":"bgoodere0@dmoz.org","gender
     }
  document.getElementsByTagName('tbody').innerHTML=rows   
 } */
- function getUser(){
+ /* function getUser(){
     let rows="";
-    for(user of users){
-            rows = rows + `<tr>
-                            <td>${user.id}</td>
-                            <td>${user.name}</td>
-                            <td>${user.email}</td>
+    for(User of Users){
+            rows = rows +`<tr>
+                            <td>${User.id}</td>
+                            <td>${User.Name}</td>
+                            <td>${User.email}</td>
                             <td>${user.gender}</td>
                             </tr>`
     }
     document.getElementById('table_Data').innerHTML=rows
-}
+} */
+
+    function getUser(){
+        let rows="";
+        for(let i=0; i<=Users.length-1;i++){
+        // for (user of Users){
+            rows+=`<tr>
+            <td>${user[i].id}</td>
+            <td>${user[i].Name}</td>
+            <td>${user[i].email}</td>
+            <td>${user[i].gender}</td>
+            </tr>`
+        }
+        document.getElementById('table_Data').innerHTML=rows
+      }
